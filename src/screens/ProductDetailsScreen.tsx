@@ -1,18 +1,22 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation/AppNavigator';
+import { View, Text, StyleSheet } from 'react-native';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'ProductDetails'>;
-
-const ProductDetailsScreen = ({ route }: Props) => {
-  const { productId } = route.params;
+const ProductDetailsScreen = () => {
+  //   const { productId } = route.params;
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>🛍️ Product ID: {productId}</Text>
+    <View style={styles.container}>
+      <Text>🛍️ Product ID: </Text>
     </View>
   );
 };
 
 export default ProductDetailsScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

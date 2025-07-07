@@ -4,7 +4,7 @@
  *
  * @format
  */
-import { StatusBar, Text, useColorScheme } from 'react-native';
+import { StatusBar, useColorScheme } from 'react-native';
 import { ThemeProvider } from './src/theme/ThemeProvider';
 import { NavigationContainer } from '@react-navigation/native';
 import AppNavigator from './src/navigation/AppNavigator';
@@ -15,7 +15,11 @@ function App() {
   return (
     <ThemeProvider>
       <NavigationContainer>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor="transparent"
+          translucent
+        />
         <AppNavigator />
       </NavigationContainer>
     </ThemeProvider>

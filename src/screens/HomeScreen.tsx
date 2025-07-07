@@ -1,23 +1,20 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation/AppNavigator';
+import { View, Text, StyleSheet } from 'react-native';
+
 import ThemeToggleButton from '../components/ThemeToggleButton';
 import { useThemeContext } from '../theme/ThemeProvider';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
-
-const HomeScreen = ({ navigation }: Props) => {
+const HomeScreen = () => {
   const { colors } = useThemeContext();
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <Text style={[styles.title, { color: colors.text }]}>🏠 Home Screen</Text>
-      <Button
+      {/* <Button
         title="Go to Product Details"
         onPress={() =>
           navigation.navigate('ProductDetails', { productId: '123' })
         }
-      />
+      /> */}
       <ThemeToggleButton />
     </View>
   );
