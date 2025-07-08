@@ -32,18 +32,19 @@ const getScreenOptions = (
     border: string;
     pureWhite: string;
     pureBlack: string;
+    tabBackground: string;
   },
 ): ((props: {
   route: RouteProp<TabParamList, keyof TabParamList>;
 }) => BottomTabNavigationOptions) => {
   const activeColor = isDarkMode ? colors.card : colors.primary;
-  const inactiveColor = isDarkMode ? '#888888' : '#999999';
+  const inactiveColor = isDarkMode ? '#c7cbcc' : '#646464';
   return ({ route }) => ({
     // headerShown: false,
     tabBarActiveTintColor: activeColor,
     tabBarInactiveTintColor: inactiveColor,
     tabBarStyle: {
-      backgroundColor: colors.pureWhite,
+      backgroundColor: colors.tabBackground,
       borderTopWidth: 0,
       height: 60,
     },
